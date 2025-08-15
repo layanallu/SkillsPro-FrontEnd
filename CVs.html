@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV Matcher</title>
+  <link rel="icon" href="img/SK logo2.png" type="image/png" />
+
+  <!-- Boxicons وأيقونات FontAwesome -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+  <!--style-->
+  <link rel="stylesheet" href="Styles/shared.css">
+  <link rel="stylesheet" href="Styles/CVs.css">
+
+
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+  <!-- SIDEBAR -->
+  <section id="sidebar">
+
+    <!--Logo part-->
+    <a href="Home.html" class="brand">
+
+      <img src="img/SK logo2.png" style="padding: 10px;  max-width: 30px;">
+      <img class="logo" src="img/SK logo3.png">
+
+    </a>
+
+    <!-- menu items -->
+    <ul class="side-menu top">
+      <li>
+        <a href="Home.html">
+          <i class="bx bxs-home"> </i>
+          <span class="text"> Home</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="my_team.html">
+          <i class='bx bxs-group'></i>
+          <span class="text"> My Team</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="Excellent Works.html">
+          <i class='bx bx-star'></i>
+          <span class="text"> Excellent Works</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="employeeCourses.html">
+          <i class="bx bx-certification"></i>
+          <span class="text"> Course</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="Vacation.html">
+          <i class='bx bxs-plane-alt'></i>
+          <span class="text"> Vacation</span>
+        </a>
+
+        	</li>
+
+
+			<li class="active">
+    <a href="CVs.html">
+      <i class="bx bxs-id-card"></i>
+      <span class="text">CV Matcher</span>
+    </a>
+  </li>
+      
+    </ul>
+
+
+
+    <!--log out part-->
+    <ul class="side-menu">
+      <li>
+        <a href="login.html" class="logout">
+          <i class='bx bxs-log-out-circle'></i>
+          <span class="text">Logout</span>
+        </a>
+      </li>
+    </ul>
+
+  </section>
+  <!-- SIDEBAR -->
+
+
+
+
+  <!-- CONTENT -->
+  <section id="content">
+    <!-- NAVBAR -->
+    <!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu'></i>
+			<div class="head-title">
+				<div class="left">
+					<h1>CV Matcher</h1>
+				</div>
+			</div>
+
+			<a class="profile-link">
+				<div class="nav-right">
+
+					<!-- 1) Avatar + name -->
+					<div class="profile" onclick="location.href='Profile.html'">
+						<img src="img/Sara.png" alt="Profile">
+						<div class="username">Remma
+						</div>
+					</div>
+
+
+					<div class="points">
+						<h2>95</h2>
+						<p>Points</p>
+					</div>
+
+
+					<div class="notification-icon" onclick="location.href='Notification.html'">
+						<i class='bx bxs-bell'></i>
+						<span class="badge">2</span>
+					</div>
+
+
+				</div>
+			</a>
+
+		</nav>
+    <!-- END NAVBAR -->
+
+
+    <!-- MAIN: CV Uploader -->
+    <main>
+      <div class="uploader">
+        <div class="uploader-header">
+          <h2>Upload CV</h2>
+        </div>
+        <!-- Button triggers hidden file input -->
+        <button type="button" class="btn-select" id="btnSelect">
+          <div class="uploader-dropzone" id="dropzone">
+            <i class="bx bx-cloud-upload"></i>
+            <p>Drag & drop or click to select files</p>
+            <!-- Form: collects files and optional JD -->
+            <form id="matchForm" enctype="multipart/form-data">
+              <input type="file" id="fileInput" name="resumes" accept=".pdf" multiple hidden>
+          </div>
+        </button>
+        <div class="uploader-jobdesc">
+          <label for="jobDescription">Job Description <small>(optional)</small></label>
+          <textarea id="jobDescription" name="job_descriptions" rows="3"
+            placeholder="e.g. Data Analyst role at X Company"></textarea>
+        </div>
+
+        <ul class="file-list" id="fileList"></ul>
+
+        <div class="uploader-actions">
+          <button id="btnCancel" class="btn-cancel">Cancel</button>
+          <button type="submit" id="btnUpload" class="btn-upload" disabled>Analyze</button>
+        </div>
+        </form>
+
+      </div>
+
+
+
+      <!-- Disclaimer -->
+      <ul class="uploader-disclaimer">
+        <li>Evaluations use a 50% Skills / 30% Experience / 20% Certifications rubric. AI is a decision-making
+          assistant, not the decision-maker.</li>
+      </ul>
+
+
+      <!-- Results -->
+      <div id="output" class="analysis-results"></div>
+
+
+
+
+
+
+
+      <!-- Form submission & error handling -->
+      <script>
+        // Bind submit handler to form
+        document.getElementById('matchForm').addEventListener('submit', async e => {
+          e.preventDefault();
+          const resultContainer = document.getElementById('output');
+          const uploadButton = document.getElementById('btnUpload');
+
+          // disable to prevent duplicates   Show loader and disable button
+          uploadButton.disabled = true;
+          resultContainer.innerHTML = `
+  <div class="loader-wrapper">
+    <div class="loader-circle"></div>
+    <div class="loader-lines">
+      <div class="loader-line loader-line--long"></div>
+      <div class="loader-line loader-line--short"></div>
+    </div>
+  </div>`;
+
+          try {
+            // Send form data to server
+            const resp = await fetch('/analyze', { method: 'POST', body: new FormData(e.target) });
+            if (!resp.ok) {
+              // Attempt to parse error JSON
+              let err = { error: resp.statusText };
+              try { err = await resp.json(); } catch { }
+              throw new Error(err.error || `Server returned ${resp.status}`);
+            }
+            const data = await resp.json();
+
+
+
+
+
+            // Clear previous results
+            resultContainer.innerHTML = '';
+            // Render valid results
+            Object.values(data.results).forEach(bucket => {
+              bucket.forEach(m => {
+                const lines = m.analysis.split(/\r?\n/);
+                const idxWhy = lines.findIndex(l => l.startsWith('Why'));
+                const idxStr = lines.findIndex(l => l.startsWith('Strengths:'));
+                const idxOv = lines.findIndex(l => l.startsWith('Summary Overview:'));
+                const idxComp = lines.findIndex(l => l.startsWith('Comparison:'));
+
+                // Why section with sub-bullets
+                const rawWhy = lines.slice(idxWhy + 1, idxStr);
+                const whyGroups = []; let curr = null;
+                rawWhy.forEach(l => {
+                  if (/^- [^\s]/.test(l)) {
+                    curr = { text: l.replace(/^- /, ''), expl: [] }; whyGroups.push(curr);
+                  } else if (/^\s{2}-/.test(l) && curr) {
+                    curr.expl.push(l.replace(/^\s*- /, ''));
+                  }
+                });
+                let whyHtml = '<ul>';
+                whyGroups.forEach(g => {
+                  whyHtml += `<li>${g.text}`;
+                  if (g.expl.length) whyHtml += `<ul>${g.expl.map(e => `<li>${e}</li>`).join('')}</ul>`;
+                  whyHtml += '</li>';
+                }); whyHtml += '</ul>';
+
+                // Strengths & overview
+                const strengths = lines.slice(idxStr + 1, idxOv).filter(l => l.startsWith('- ')).map(l => l.replace(/^- /, ''));
+                const overview = lines.slice(idxOv + 1, idxComp > 0 ? idxComp : lines.length).filter(l => l.startsWith('- ')).map(l => l.replace(/^- /, ''));
+                const comparison = idxComp > 0 ? lines.slice(idxComp + 1).filter(l => l.startsWith('- ')).map(l => l.replace(/^- /, '')) : [];
+
+                // Card HTML
+                const cardHtml = `
+<div class="candidate-card">
+  <div class="card-header">
+    <div class="score-circle" data-score="${m.score}">
+      <svg viewBox="0 0 36 36" class="circular-chart">
+        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+        <path class="circle" stroke-dasharray="0,100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+        <text x="18" y="18" class="percentage" text-anchor="middle" alignment-baseline="middle">0%</text>
+      </svg>
+    </div>
+    <div class="candidate-info">
+      <h3 class="candidate-name">${m.filename}</h3>
+      <p class="job-position">${m.suggested_role || ''}</p>
+    </div>
+  </div>
+  <button class="toggle-details">More …</button>
+  <div class="card-details">
+    <div class="detail-section"><strong>Why ${m.score}/100?</strong>${whyHtml}</div>
+    ${comparison.length ? `<div class="detail-section"><strong>Comparison</strong><ul>${comparison.map(i => `<li>• ${i}</li>`).join('')}</ul></div>` : ''}
+    <div class="detail-section"><strong>Strengths</strong><ul>${strengths.map(i => `<li>• ${i}</li>`).join('')}</ul></div>
+    <div class="detail-section"><strong>Summary Overview</strong><ul>${overview.map(i => `<li>• ${i}</li>`).join('')}</ul></div>
+  </div>
+</div>`;
+                resultContainer.insertAdjacentHTML('beforeend', cardHtml);
+              });
+            });
+
+            // Render invalid file errors if any
+            if (data.invalid && data.invalid.length) {
+              data.invalid.forEach(msg => {
+                const errorCard = `
+<div class="candidate-card error-card">
+  <div class="card-header">
+    <h3 class="candidate-name">Error</h3>
+    <p class="job-position">${msg}</p>
+  </div>
+</div>`;
+                resultContainer.insertAdjacentHTML('beforeend', errorCard);
+              });
+            }
+
+            // bind chart & toggle
+            document.querySelectorAll('.candidate-card').forEach(card => {
+              // Skip cards without score graph (e.g. error cards)
+              const wr = card.querySelector('.score-circle');
+              if (!wr) return;
+
+              // Safe bind percentage
+              const pct = +wr.dataset.score;
+              const circle = wr.querySelector('.circle');
+              const text = wr.querySelector('.percentage');
+              if (circle && text) {
+                circle.setAttribute('stroke-dasharray', `${pct},100`);
+                text.textContent = `${pct}%`;
+              }
+              const btn = card.querySelector('.toggle-details'), det = card.querySelector('.card-details');
+              btn.addEventListener('click', () => { const open = det.classList.toggle('open'); btn.textContent = open ? 'Less' : 'More …'; });
+            });
+
+          } catch (err) {
+            resultContainer.innerHTML = `<div class="error-banner"><p><strong>Error: </strong> ${err.message}</p></div>`;
+          } finally {
+            uploadButton.disabled = false;
+          }
+        });
+      </script>
+
+
+
+
+
+
+      <!-- END CONTENT -->
+      <script src="script/script.js"></script>
+
+      <!-- Secondary script: file selection, drag-drop, progress simulation -->
+      <script>
+        const dropzone = document.getElementById('dropzone');
+        const fileInput = document.getElementById('fileInput');
+        const btnSelect = document.getElementById('btnSelect');
+        const fileList = document.getElementById('fileList');
+        const btnCancel = document.getElementById('btnCancel');   // <=== هذي
+        const btnUpload = document.getElementById('btnUpload');   // <=== و هذي
+
+        // 1) اختر الملفات
+        btnSelect.addEventListener('click', () => fileInput.click());
+        fileInput.addEventListener('change', renderFiles);
+
+        // 2) سحْب وإفلات
+        ['dragenter', 'dragover'].forEach(evt =>
+          dropzone.addEventListener(evt, e => {
+            e.preventDefault();
+            dropzone.classList.add('dragover');
+          })
+        );
+        ['dragleave', 'drop'].forEach(evt =>
+          dropzone.addEventListener(evt, e => {
+            e.preventDefault();
+            dropzone.classList.remove('dragover');
+          })
+        );
+        dropzone.addEventListener('drop', e => {
+          fileInput.files = e.dataTransfer.files;
+          renderFiles();
+        });
+
+        // 3) عرض الملفات وشغل شريط التقدّم الوهمي
+        function renderFiles() {
+          fileList.innerHTML = '';
+          const files = Array.from(fileInput.files);
+          if (files.length === 0) {
+            btnUpload.disabled = true;
+            return;
+          }
+          btnUpload.disabled = false;
+
+          files.forEach(file => {
+            const li = document.createElement('li');
+            li.className = 'file-item';
+            li.innerHTML = `
+              <div class="file-name">
+                <i class='bx bx-file'></i>
+                ${file.name}
+              </div>
+              <div class="progress-container">
+                <div class="progress-bar"><div class="bar"></div></div>
+                <span class="percent">0%</span>
+              </div>
+            `;
+            fileList.appendChild(li);
+            simulateProgress(li.querySelector('.bar'), li.querySelector('.percent'));
+          });
+        }
+
+        // 4) مثال وهمي للتقدّم
+        function simulateProgress(barEl, percentEl) {
+          let pct = 0;
+          const iv = setInterval(() => {
+            pct += 10;
+            barEl.style.width = pct + '%';
+            percentEl.textContent = pct + '%';
+            if (pct >= 100) clearInterval(iv);
+          }, 100);
+        }
+
+        // 5) Cancel يمسح كل شيء
+        btnCancel.addEventListener('click', () => {
+          fileInput.value = '';
+          fileList.innerHTML = '';
+          btnUpload.disabled = true;
+        });
+
+
+      </script>
+
+</body>
+
+</html>
