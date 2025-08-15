@@ -1,0 +1,1236 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-content {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    width: 100%;
+
+    flex: 1 1 calc(33.333% - 1rem);
+    min-width: 380px;
+
+}
+
+#content main .main-content>div {
+    border-radius: 20px;
+    background: var(--light);
+    padding: 24px;
+    overflow-x: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.card .head {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    margin-bottom: 14px;
+}
+
+.card .head h3 {
+    margin-right: auto;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.list {
+    width: 100%;
+}
+
+.list li {
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 16px;
+    background: var(--grey);
+    border-radius: 10px;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+
+
+
+.request-item {
+  background-color: var(--grey);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+
+.task-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.textGroup p {
+  font-size: 14px;
+  color: #333;
+}
+
+/* ===== Action Buttons ===== */
+ .actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+
+.list li:last-child {
+    margin-bottom: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.card .list li.accepted {
+    background: #dafddd;
+}
+
+.card .list li.accepted i {
+    color: #4caf50;
+}
+
+.card .list li.rejected {
+    background-color: #fbb7ce;
+}
+
+.card .list li.rejected i {
+    color: #f877a3;
+}
+
+
+
+
+
+
+
+.headerComment {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: auto;
+    gap: 10px;
+
+
+}
+
+.leftGroup i{
+  border-radius: 4px;
+  padding: 3px;
+}
+
+
+.headerComment i {
+    font-size: 27px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+  
+  .actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+  }
+  
+  .actions button {
+    flex: 1;
+    font-family: "Poppins" ;
+    padding: 8px 0;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s ease;
+  }
+  
+  
+  .actions button[type="submit"] {
+    border-color:#4caf50 ;
+    background-color:#dafddd;
+    color: #4caf50;
+  }
+  
+  .actions button:not([type="submit"]) {
+    background-color: #fbb7ce;
+    color: #f877a3;
+    border-color:#f877a3; ;
+  }
+  
+  
+  dialog input:focus, textarea:focus {
+	background-color: #ffffff; /* يتحول إلى الأبيض عند الكتابة */
+	outline: none; /* إزالة الحدود الزرقاء الافتراضية */
+	border-color: #6F6FF5; /* تغيير لون الإطار */
+  }
+
+dialog textarea {
+	width: 90%;
+	padding: 10px;
+	font-family: var(--poppins);
+	background-color: var(--grey);
+	border: 0.001em solid var(--dark-grey);
+	font-size: small;
+}
+
+
+#rejectDialog .confirm-reject{
+  width: 90%;
+  padding: 10px;
+  margin: 6px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  background-color: #fbb7ce;
+  color: #f877a3;
+  font-family: 'poppins';
+  border-color:#f877a3; ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Eval Card */
+dialog .container .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+dialog .container .head h3 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: left;
+}
+
+
+.task-information{
+  text-align:left;
+  width: 100%;
+  padding: 5px 20px;
+
+}
+.points-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+ width: 100%;
+}
+
+#pointsInput{
+      width: 78%;
+			padding: 6px 10px;
+			border-radius: 8px;
+			border: 1px solid #ccc;
+			text-align: center;
+}
+
+.adjustPoints {
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  padding: 6px 10px;
+  
+  cursor: pointer;
+  color: #6F6FF5;
+}
+
+.adjustPoints:hover {
+  background-color: #d8d8fd;
+}
+
+
+.action-btn {
+  width: 100%;
+  flex: 1;
+  padding: 10px;
+  font-family: var(--poppins);
+  font-size: medium;
+  border-radius: 5px;
+  margin: 6px 5px;
+}
+.action-btn.filled {
+  background-color: #6F6FF5;
+  color: white;
+  border: none;
+}
+.action-btn.outlined {
+  border: solid 3px #FFD700;
+  color:  #FFD700;
+  background-color: white;
+}
+.action-btn.filled:hover{
+  background-color: #6161fa;
+  color: white;
+  border: none;
+}
+.action-btn.outlined:hover{
+  border: solid 3px #FFD700;
+  color:  #FFD700;
+  background-color: #ffd90039;
+  color:#FFD700;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+.container2 .invatedEmp{
+	display: flex;
+	position: relative;
+	flex-wrap: wrap; 
+  place-content: center;
+  margin: 10px 0;
+	
+}
+
+.container2:has(.invatedEmp:nth-child(2)) {
+    justify-content: center;
+}
+
+
+.container2 .invatedEmp .invatedEmpImg ,
+.container2 .invatedEmp .selected-employees {
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	margin-right: -20px; 
+	z-index: 2;
+}
+
+
+
+.container2 .invatedEmp i{
+	font-size: 50px;
+	border-radius: 50%;
+	z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.task-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+p.info {
+  font-size: 12px;
+  color: rgb(136, 136, 136);
+  cursor: pointer;
+}
+
+
+
+.leftGroup {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+}
+
+.rightGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.card .list li .rightGroup .point {
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.leftGroup i {
+    font-size: 30px;
+    color: #6f6ff5;
+
+}
+
+.card .list li.excellent {
+    background: #fff9bb ;
+}
+
+li.excellent .leftGroup i {
+    color: #fee267;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.headerDialog {
+    position: relative;
+    padding: 12px 40px; /* مساحة للأيقونة */
+    text-align: center; /* توسيط العنوان */
+  }
+  
+  .headerDialog .closeBtn {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .headerDialog .backBtn {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+
+
+  
+  
+  .leftGroup {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  
+  
+  
+  
+  
+  .dialog-info i {
+    font-size: 20px;
+  }
+  
+  /* تنسيق معلومات التفاصيل */
+  .dialog-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 24px;
+    font-size: 15px;
+    padding: 12px 0;
+    margin-bottom: 16px;
+  }
+  
+  .dialog-info p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  #taskDialog .list {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  #taskDialog .list li {
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  #taskDialog .list li .headerComment {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  #taskDialog .list li .textGroup {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+  
+  #taskDialog .list li .textGroup p {
+    margin: 0;
+    text-align: left;
+    align-items: flex-start;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
+
+
+
+
+
+
+
+
+  /* ===== Vacation Requests Card ===== */
+#vacation-requests .request-item {
+  background-color: var(--grey);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#vacation-requests .task-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#vacation-requests .profile-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#vacation-requests .textGroup p {
+  font-size: 14px;
+  color: #333;
+}
+
+/* ===== Action Buttons ===== */
+#vacation-requests .actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.accept-btn,
+.reject-btn {
+  padding: 6px 14px;
+  font-size: 14px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.accept-btn {
+  background-color: #dafddd;
+  color: #4caf50;
+  border: 1.5px solid #4caf50;
+}
+
+.reject-btn {
+  background-color: #fbb7ce;
+  color: #f14983;
+  border: 1.5px solid #f14983;
+}
+
+.accept-btn:hover {
+  background-color: #c8f6cc;
+}
+
+.reject-btn:hover {
+  background-color: #f69cb9;
+}
+
+
+
+/* ===== Vacation Details Dialog ===== */
+
+
+/* Body */
+#vacationDetailsDialog .dialog-body {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Labels */
+#vacationDetailsDialog .dialog-body .label {
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0;
+  text-align: left;
+}
+
+/* User Info */
+#vacationDetailsDialog .user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  gap: 6px;
+}
+#vacationDetailsDialog .user-info .avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  padding: 4px;
+  object-fit: cover;
+}
+#vacationDetailsDialog .user-info .username {
+  margin: 0;
+  font-weight: 600;
+  font-size: 15px;
+  align-content: center;
+}
+
+/* Info Lines */
+#vacationDetailsDialog .dialog-body .info {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 6px;
+  font-size: 14px;
+  color: #333;
+  margin-left: 10px;
+}
+#vacationDetailsDialog .dialog-body .info i {
+  font-size: 18px;
+  color: #6C6AF1;
+}
+
+/* Replacement */
+#vacationDetailsDialog .replacement {
+  margin-left: 15px;
+  display: flex;
+  justify-content: left;
+}
+#vacationDetailsDialog .replacement .avatar,
+#vacationDetailsDialog .replacement i.bxs-plus-circle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #6C6AF1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 24px;
+}
+
+
+
+/* Actions */
+#vacationDetailsDialog .actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+}
+#vacationDetailsDialog .actions button {
+  flex: 1;
+  padding: 12px 0;
+  font-size: 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  border: none;
+}
+#vacationDetailsDialog .accept-btn {
+  background-color: #dafddd;
+  color: #4caf50;
+}
+#vacationDetailsDialog .accept-btn:hover {
+  background-color: #c8f6cc;
+}
+#vacationDetailsDialog .reject-btn {
+  background-color: #fbb7ce;
+  color: #f14983;
+}
+#vacationDetailsDialog .reject-btn:hover {
+  background-color: #f69cb9;
+}
+
+
+
+
+
+
+/* حاوية عرض الأيقونة أو الصور */
+.replacement-container {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 16px 0;
+}
+
+/* أيقونة + لإضافة بدائل */
+.add-replacement {
+  font-size: 48px;
+  color: rgba(180,180,247,0.63);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.add-replacement:hover {
+  transform: scale(1.1);
+}
+
+/* صور الموظفين بعد التحديد */
+.replacement-container img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* زر الاستمرار */
+.continue-btn {
+  width: 100%;
+  margin: 12px 0;
+  padding: 10px;
+  background: #6C6AF1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.continue-btn:enabled {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.replacement-container {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 16px 0;
+}
+/* أيقونة + */
+.add-replacement {
+  font-size: 48px;
+  color: rgba(100,100,247,0.8);
+  cursor: pointer;
+}
+/* صور البدلاء */
+.replacement-container img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: default;
+}
+/* زر Continue في مودال المهام */
+#taskDialog .continue-btn {
+  display: block;
+  margin: 12px auto;
+  padding: 8px 16px;
+  background: #6C6AF1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+#taskDialog .continue-btn:enabled {
+  opacity: 1;
+}
+.task-list li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  position: relative;
+}
+.task-list li.assigned {
+  background: #dafddd;
+}
+.task-list li .assigned-to {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+/* حاوية عرض الأيقونة أو الصور */
+.replacement-container {
+  display: flex;
+  gap: 2px;
+  justify-content: left;
+  margin: 0 8px;
+}
+
+/* أيقونة + لإضافة بدائل */
+.add-replacement {
+  font-size: 48px;
+  color: rgba(180,180,247,0.63);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.add-replacement:hover {
+  transform: scale(1.1);
+}
+
+/* صور الموظفين بعد التحديد */
+.replacement-container img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* زر الاستمرار */
+.continue-btn {
+  width: 100%;
+  margin: 12px 0;
+  padding: 10px;
+  background: #6C6AF1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.continue-btn:enabled {
+  opacity: 1;
+}
+
+
+
+
+#empDialog .emp-list {
+	list-style: none;
+	padding: 0;
+}
+
+#empDialog .emp-list li {
+	display: flex;
+	align-items: center;
+	padding: 20px;
+	margin-bottom: 10px;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: background 0.3s;
+}
+
+#empDialog .emp-list li:hover {
+	background: rgba(180, 180, 247, 0.4);
+}
+
+#empDialog .emp-list li.selected {
+	background: rgba(100, 100, 247, 0.8);
+	color: white;
+}
+
+#empDialog .profile {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+#empDialog .btn {
+	width: 100%;
+	border-radius: 5px;
+	padding: 10px;
+	background-color: #6F6FF5;
+	font-family: var(--poppins);
+	font-size: medium;
+	color: white;
+}
+ 
+
+/* حاوية الصورة لتمكين الـ tooltip */
+.replacement-container .img-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+/* الـ tooltip نفسه */
+.replacement-container .img-wrapper .tooltip {
+  position: absolute;
+  bottom: -32px;    /* تحت الصورة */
+  left: 50%;
+  transform: translateX(-50%);
+  background:rgba(180, 180, 247, 0.4);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+
+/* عندما نضيف الكلاس show يظهِر الـ tooltip */
+.replacement-container .img-wrapper .tooltip.show {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* زر عرض files */
+.view-link {
+  display: flex;
+  width: 100%;
+  place-content: center;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(180, 180, 247, 0.2);
+  color: #6C6AF1;
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.view-cert-btn:hover {
+  background-color: rgba(108, 106, 241, 0.15);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .clickable-card {
+    cursor: pointer !important; 
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+@media (min-width: 1003px) {
+    
+
+        .user-section .userNumber {
+            
+            gap: 18rem;
+            flex: 1 1 250px;
+        }
+}
+
+
+
+/* Responsive */
+
+
+@media screen and (max-width: 768px) {
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+    .main-content {
+        flex-direction: column;
+    }
+    .card {
+        width: 100%;
+    }
+
+   
+    .user-section {
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      .user-info {
+        flex-direction: row; /* ✅ تخلي الصورة والمعلومات جنب بعض */
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+    
+      .userNumber {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 10px;
+        width: fit-content;         /* ✅ العرض على قد المحتوى */
+        margin-inline: auto;        /* ✅ يوسّطه أفقيًا */
+        flex: none !important;
+      }
+    
+      /* ✅ تصغير حجم الرقم */
+      .userPoint .point,
+      .userWork .workNum {
+        font-size: 60px;
+      }
+    
+      .userNumber p {
+        font-size: 16px;
+      }
+   
+
+    #replacement-requests .rightGroup {
+        flex-direction: column;
+
+        gap: 4px;
+    }
+
+}
+
+
+

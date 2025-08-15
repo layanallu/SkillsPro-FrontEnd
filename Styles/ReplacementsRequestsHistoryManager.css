@@ -1,0 +1,446 @@
+
+
+
+
+.input-box {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    background: #fff;
+    margin: 0 auto;
+    border-radius: 8px;
+   
+   
+  }
+  .input-box i,
+  .input-box .button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .input-box i {
+    left: 20px;
+    font-size: 30px;
+    color: #707070;
+  }
+  .input-box input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    padding: 0 155px 0 65px;
+    background-color: transparent;
+  }
+  .input-box .button {
+    right: 4px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 6px;
+    background-color:#6c6af1d6;
+    cursor: pointer;
+    line-height: 1;
+  }
+  .input-box .button:active {
+    transform: translateY(-50%) scale(0.98);
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 500px) {
+    .input-box {
+      height: 40px;
+      margin: 0 8px;
+    }
+    .input-box i {
+      left: 12px;
+      font-size: 25px;
+    }
+    .input-box input {
+      padding: 0 112px 0 50px;
+    }
+    .input-box .button {
+      right: 2px;
+      font-size: 14px;
+      padding: 10px 20px;
+    }
+
+    
+  }
+  
+  .search-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  
+  .sort-icon {
+    border: none;
+    padding: 10px 12px;
+    cursor: pointer;
+    font-size: 25px;
+    
+  }
+
+
+
+
+
+ /* ===== Container الأساسي للصفحة ===== */
+.dashboard .user-section {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+  }
+  
+  
+/* ===== العناوين ===== */
+.dashboard .user-section .header {
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr 1.2fr 0.8fr 0.8fr 0.8fr 1fr 0.8fr ;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 10px 20px;
+  color: #222;
+  place-items: center;
+  text-align: center;
+}
+
+.dashboard .user-section .header p {
+  margin: 0;
+}
+
+/* ===== عناصر كل صف ===== */
+
+
+.dashboard .user-section .list li {
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr 1.2fr 0.8fr 0.8fr 0.8fr 1fr 0.8fr ;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: var(--grey);
+  margin: 10px 0;
+  place-items: center;
+  text-align: center;
+  font-size: 13px;
+}
+
+
+  .task-status {
+    font-size: 15px;
+  }
+
+  .dashboard .user-section .req-info {
+    display: flex;
+    align-items: center;
+    place-items: center;
+    text-align: center;
+    gap: 10px;
+}
+.dashboard .user-section .req-info img{
+  height: 40px;
+  width: 40;
+}
+
+
+.list li.accepted {
+  background: #dafddd !important;
+  ;
+}
+
+
+
+.list li.rejected {
+  background-color: #fbb7ce !important;
+  ;
+}
+
+
+
+
+.replacement-container {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 16px 0;
+}
+/* أيقونة + */
+.add-replacement {
+  font-size: 48px;
+  color: rgba(100,100,247,0.8);
+  cursor: pointer;
+}
+/* صور البدلاء */
+.replacement-container img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: default;
+}
+
+
+/* حاوية عرض الأيقونة أو الصور */
+.replacement-container {
+  display: flex;
+  gap: 2px;
+  justify-content: left;
+  margin: 0 8px;
+}
+
+/* أيقونة + لإضافة بدائل */
+.add-replacement {
+  font-size: 38px;
+  color: rgba(180,180,247,0.63);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.add-replacement:hover {
+  transform: scale(1.1);
+}
+
+/* صور الموظفين بعد التحديد */
+.replacement-container img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* زر الاستمرار */
+.continue-btn {
+  width: 100%;
+  margin: 12px 0;
+  padding: 10px;
+  background: #6C6AF1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.continue-btn:enabled {
+  opacity: 1;
+}
+
+
+
+
+#empDialog .emp-list {
+	list-style: none;
+	padding: 0;
+}
+
+#empDialog .emp-list li {
+	display: flex;
+	align-items: center;
+	padding: 20px;
+	margin-bottom: 10px;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: background 0.3s;
+}
+
+#empDialog .emp-list li:hover {
+	background: rgba(180, 180, 247, 0.4);
+}
+
+#empDialog .emp-list li.selected {
+	background: rgba(100, 100, 247, 0.8);
+	color: white;
+}
+
+#empDialog .profile {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+#empDialog .btn {
+	width: 100%;
+	border-radius: 5px;
+	padding: 10px;
+	background-color: #6F6FF5;
+	font-family: var(--poppins);
+	font-size: medium;
+	color: white;
+}
+ 
+
+
+.actions {
+  grid-column: 1 / -1; /* يمتد على كل الأعمدة داخل الـ li grid */
+  display: flex;
+  
+  margin-top: -16px;
+  background-color: var(--grey);
+  padding-bottom: 10px;
+  border-radius: 0 0 10px 10px;
+}
+
+.actions button {
+  flex: 1;
+  padding: 10px;
+  margin: 6px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: 'poppins';
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+
+
+
+
+.actions button[type="submit"] {
+  border-color:#4caf50 ;
+  background-color:#dafddd;
+  color: #4caf50;
+}
+
+.actions button:not([type="submit"]) {
+  background-color: #fbb7ce;
+  color: #f877a3;
+  border-color:#f877a3; 
+}
+
+
+
+
+.headerDialog {
+  position: relative;
+  padding: 12px 40px; /* مساحة للأيقونة */
+  text-align: center; /* توسيط العنوان */
+}
+
+.headerDialog .closeBtn {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#taskDialog .list {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.list li {
+  width: 100%;
+  height: fit-content;
+  margin-bottom: 16px;
+  background: var(--grey);
+  border-radius: 10px;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+#taskDialog .list li .headerComment {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#taskDialog .list li .textGroup p {
+  margin: 0;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.info {
+  font-size: 12px;
+  color: rgb(136, 136, 136);
+  cursor: pointer;
+}
+
+
+
+
+
+dialog input:focus, textarea:focus {
+	background-color: #ffffff; /* يتحول إلى الأبيض عند الكتابة */
+	outline: none; /* إزالة الحدود الزرقاء الافتراضية */
+	border-color: #6F6FF5; /* تغيير لون الإطار */
+  }
+
+dialog textarea {
+	width: 90%;
+	padding: 10px;
+	font-family: var(--poppins);
+	background-color: var(--grey);
+	border: 0.001em solid var(--dark-grey);
+	font-size: small;
+}
+
+
+#rejectDialog .confirm-reject{
+  width: 90%;
+  padding: 10px;
+  margin: 6px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  background-color: #fbb7ce;
+  color: #f877a3;
+  font-family: 'poppins';
+  border-color:#f877a3; ;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+  .dashboard .user-section .header {
+      display: none;
+      /* نخفي العناوين */
+  }
+
+
+  .dashboard .user-section .list li {
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+      gap: 10px;
+      border-radius: 12px;
+  }
+
+  .task-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+  }
+
+
+
+
+}

@@ -1,0 +1,1155 @@
+
+
+/* -------DashBoard ----------*/
+
+
+#content main .chartsBx {
+	display: flex;
+	flex-wrap: wrap;
+	grid-gap: 24px;
+	width: 100%;
+	color: var(--dark);
+
+
+	
+}
+
+#content main .chartsBx>div {
+	border-radius: 20px;
+	background: var(--light);
+	padding: 24px;
+	overflow-x: auto;
+}
+
+#content main .chartsBx .chart-wrapper{
+	flex-grow: 1;
+	flex-basis: 500px;
+	padding-top: 50px;
+}
+
+#content main .chartsBx .container {
+	flex-grow: 1;
+	flex-basis: 300px;
+}
+
+.chart-wrapper {
+	position: relative;
+  }
+
+.chart-container {
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-end;
+	height: 450px;
+	background: #f8f8f8;
+	padding: 20px;
+	border-radius: 12px;
+	position: relative;
+}
+
+.chart-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+	/*bars start from bottom*/
+	width: 50px;
+
+	height: 100%;
+	/* full height based in height in html*/
+	position: relative;
+	/*for pic*/
+}
+
+.bar {
+
+	margin-top: auto;
+	height: var(--height);
+	width: 60px;
+	min-width: 50px;
+	border-radius: 8px;
+	animation: grow 1s ease-out forwards;
+}
+
+/* animate bars*/
+@keyframes grow {
+	from {
+		height: 0;
+	}
+
+	to {
+		height: var(--height);
+	}
+}
+
+.chart-item img {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-top: -20px;
+	/* to make pic touch the bar */
+
+}
+
+.chart-item span {
+	font-size: 14px;
+	font-weight: bold;
+	color: #333;
+}
+
+.show-all-btn {
+	position: absolute;
+	bottom: 12px;
+	right: 12px;
+	background-color: #6c6af1;
+	color: white;
+	border: none;
+	border-radius: 50%;
+	width: 36px;
+	height: 36px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+	z-index: 2;
+  }
+
+/* -------Task List ----------*/
+
+#content main .chartsBx .container {
+	flex-grow: 1;
+	flex-basis: 300px;
+	cursor: pointer;
+}
+
+#content main .chartsBx .head {
+	display: flex;
+	align-items: center;
+	grid-gap: 16px;
+	margin-bottom: 24px;
+}
+
+#content main .chartsBx .head h3 {
+	margin-right: auto;
+	font-size: 24px;
+	font-weight: 600;
+}
+
+
+#content main .chartsBx .head .bx {
+	cursor: pointer;
+
+}
+
+#content main .chartsBx .container .head i {
+	padding-right: auto;
+}
+
+
+#content main .chartsBx .container .todo-list {
+	width: 100%;
+}
+
+#content main .chartsBx .container .todo-list li {
+	width: 100%;
+	height: fit-content;
+	margin-bottom: 16px;
+	background: var(--grey);
+	border-radius: 10px;
+	padding: 14px 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#content main .chartsBx .container .todo-list li .bx {
+	cursor: pointer;
+	font-size: 27px;
+}
+
+#content main .chartsBx .container .todo-list li.completed {
+	background-color: #dafddd;
+}
+
+#content main .chartsBx .container .todo-list li:last-child {
+	margin-bottom: 0;
+}
+
+.task-info {
+    font-size: 12px;
+    color: #888;
+	
+}
+
+#tasks-left {
+    font-size: 14px;
+    color: #333;
+  
+}
+
+.headerComment{
+	display: flex;
+    flex-direction: column;
+	margin-right: auto;
+	
+}
+
+/* MAIN */
+/*-- --------------------------------------------------- --*/
+
+/* CONTENT */
+/*-- ------------------------------------------------------------------------------------------------------------------------- --*/
+
+
+/* Card */
+
+::backdrop {
+	background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5));
+}
+
+dialog {
+	box-sizing: border-box;
+	width: min(90vw, 360px);
+	
+	border: 1px solid #ddd;
+	border-radius: 2%;
+	text-align: center;
+	padding: 0.8em 1.5em 1em;
+	position: relative;
+	margin: auto;
+	padding: auto;
+	font-family: var(--poppins);
+}
+
+dialog .container .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+dialog .container .head h3 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: left;
+}
+
+dialog .container .head button {
+	text-align: center;
+	font-size: 24px;
+	font-weight: 600;
+}
+
+dialog .taskInfo {
+	width: 90%;
+	padding: 10px;
+	margin-bottom: 10px;
+	font-family: var(--poppins);
+	background-color: var(--grey);
+	border: 0.001em solid var(--dark-grey);
+	font-size: medium;
+}
+.viewMode{
+	width: 90%;
+	padding: 5px 20px;
+}
+
+dialog input:focus, textarea:focus {
+	background-color: #ffffff; /* يتحول إلى الأبيض عند الكتابة */
+	outline: none; /* إزالة الحدود الزرقاء الافتراضية */
+	border-color: #007bff; /* تغيير لون الإطار */
+  }
+
+dialog textarea {
+	width: 90%;
+	padding: 10px;
+	font-family: var(--poppins);
+	background-color: var(--grey);
+	border: 0.001em solid var(--dark-grey);
+	font-size: small;
+
+}
+
+/* 1️⃣ تصميم الحقل الرئيسي */
+.custom-dropdown {
+	position: relative;
+	width: 90%;
+	border: 0.001em solid var(--dark-grey);
+	padding: 10px;
+	margin: auto;
+	margin-bottom: 10px;
+	cursor: pointer;
+	font-family: var(--poppins);
+	background-color: var(--grey);
+	text-align: left;
+	font-size: small;
+	color: gray;
+}
+
+/* 2️⃣ عند تحديد خيار يصبح النص أسود */
+.custom-dropdown.active {
+	color: black;
+}
+
+/* 3️⃣ قائمة الخيارات */
+.dropdown-options {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	background: white;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	overflow: hidden;
+	z-index: 100;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 4️⃣ تصميم الخيارات */
+.dropdown-options div {
+	padding: 10px;
+	cursor: pointer;
+	color: black;
+	transition: 0.2s;
+}
+
+/* 5️⃣ لون الهفر بنفسجي فاتح */
+.dropdown-options div:hover {
+	background: #6c6af14b;
+	/* بنفسجي فاتح */
+}
+
+/* 6️⃣ لون العنصر المحدد بنفسجي غامق */
+.dropdown-options div.selected {
+	background: #6c6af17c;
+	/* بنفسجي أغمق */
+	color: white;
+}
+
+
+
+
+/* جعل العناصر في سطر واحد مع تباعد متناسق */
+/* جعل العناصر في صف واحد متناسق */
+.container2 {
+    display: flex;
+  flex-wrap: wrap;  /* يسمح للعناصر بالتنقل إلى السطر التالي إذا كانت المساحة غير كافية */
+
+    align-items: center;
+    grid-gap: 16px;
+	padding: 20px 13px;
+}
+
+.container2 .calendarIcon{
+	display: flex;
+    align-items: center;  /* يجعل الأيقونة والنص بنفس المستوى */
+	margin-right: auto;
+	font-family: var(--poppins);
+	text-align: center;
+}
+.calendarIcon button {
+    display: flex;
+    align-items: center;
+}
+.calendarIcon span {
+    font-size: 18px;
+    font-family: var(--poppins);
+    color: black;
+}
+.container2 .calendarIcon i {
+
+	color:#b4b4f7 !important;
+	margin-right: auto;
+	font-size: 45px;
+	font-family: var(--poppins);
+}
+
+
+
+.container2 .invatedEmp{
+	display: flex;
+	position: relative;
+	flex-wrap: wrap; 
+	
+}
+
+.container2:has(.invatedEmp:nth-child(2)) {
+    justify-content: center;
+}
+
+
+.container2 .invatedEmp .invatedEmpImg ,
+.container2 .invatedEmp .selected-employees {
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	margin-right: -20px; 
+	z-index: 2;
+}
+
+
+
+.container2 .invatedEmp i{
+	font-size: 50px;
+	border-radius: 50%;
+	z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+/* Calender */
+
+
+#calendarDialog {
+	width: 350px;
+	padding: 0%;
+}
+
+.calendar {
+	background-color: var(--light);
+	border-radius: 10px;
+	overflow: hidden;
+	width: 300px;
+	color: var(--dark);
+	padding: 10px;
+	padding-bottom: 20px;
+	margin: auto;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+}
+
+
+#month-year {
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.weekdays,
+.days {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.days {
+	height: 210px;
+}
+
+.weekdays div,
+.days div {
+	width: 14.28%;
+	text-align: center;
+	padding: 10px 0;
+	border-radius: 5px;
+}
+
+.days div {
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.days div:hover {
+	background-color: #6c6af14b;
+
+}
+
+.day.selected {
+	background-color: #6c6af17c;
+	color: white;
+  }
+.days .today {
+	background-color: #6c6af17c;
+	color: white;
+}
+
+.days .fade {
+	color:#afaeae;
+}
+.days .disabled {
+	color: #afaeae;
+	pointer-events: none;
+  }
+ 
+  .calendarIcon {
+	position: relative;
+  }
+  
+  
+  .calendarIcon::after  {
+	content: "Deadline Date";
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	background: rgba(180, 180, 247, 0.81);
+	color: white;
+	padding: 5px 10px;
+	font-size: 10px;
+	border-radius: 6px;
+	opacity: 0;
+	white-space: nowrap;
+	pointer-events: none;
+	transition: opacity 0.2s ease;
+  }
+  
+  
+  .calendarIcon:hover::after {
+	opacity: 1;
+  }
+
+/* Employees Card */
+
+
+
+#empDialog .emp-list {
+	list-style: none;
+	padding: 0;
+}
+
+#empDialog .emp-list li {
+	display: flex;
+	align-items: center;
+	padding: 20px;
+	margin-bottom: 10px;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: background 0.3s;
+}
+
+#empDialog .emp-list li:hover {
+	background: rgba(180, 180, 247, 0.4);
+}
+
+#empDialog .emp-list li.selected {
+	background: rgba(100, 100, 247, 0.8);
+	color: white;
+}
+
+#empDialog .profile {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+  
+  .invatedEmp::after {
+	content: "Invated Employees";
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	background: rgba(180, 180, 247, 0.81);
+	color: white;
+	padding: 5px 10px;
+	font-size: 10px;
+	border-radius: 6px;
+	opacity: 0;
+	white-space: nowrap;
+	pointer-events: none;
+	transition: opacity 0.2s ease;
+  }
+  
+  .invatedEmp:hover::after {
+	opacity: 1;
+  }
+  /* ===== View Mode: ادفع الصور على اليمين ===== */
+#viewMode .container2 {
+	display: flex;               /* تأكد أنها flex */
+	align-items: center;         /* محاذاة عمودية */
+	justify-content: flex-start; /* البداية من اليسار */
+  }
+  
+  /* هذا يمنع الصور من الالتصاق بالتاريخ */
+  #viewMode .calendarIcon {
+	margin-right: auto !important;
+  }
+  
+  /* اعطِ الصور نفس تراكب add/edit */
+  #viewMode .invatedEmp {
+	display: flex;
+	align-items: center;
+	margin: 0 !important;       /* يلغي أي margin سابق */
+  }
+  
+  #viewMode .invatedEmp .invatedEmpImg {
+	margin-right: -13px !important;
+	flex-shrink: 0;
+	z-index: 2;
+  }
+  
+  
+  
+
+/* زر الإغلاق والمشاركة */
+
+
+#empDialog .btn {
+	width: 100%;
+	border-radius: 5px;
+	padding: 10px;
+	background-color: #6F6FF5;
+	font-family: var(--poppins);
+	font-size: medium;
+	color: white;
+}
+
+.selected-employees div {
+	position: relative;
+}
+
+.selected-employees img {
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	margin-right: -20px; 
+	z-index: 2;
+}
+
+/* Hide the “+” icon in view mode */
+#viewMode .invatedEmp i.bxs-plus-circle {
+	display: none;
+  }
+  
+
+
+
+
+
+/* Check Box */
+
+dialog label{
+	display: flex;
+	margin-right: auto;
+	padding-left: 20px;
+	margin-bottom: 10px;
+}
+
+
+
+  .evalCheckbox {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.evalCheckbox .checkmark {
+	width: 20px;
+	height: 20px;
+	border: 2px solid var(--dark-grey);
+	border-radius: 4px;
+	display: inline-block;
+	margin-right: 8px;
+	position: relative;
+}
+
+/* Show checkmark when checked */
+.evalCheckbox input:checked + .checkmark::after {
+	content: "✔";
+	font-size: 16px;
+	color: white;
+	position: absolute;
+	left: 4px;
+	top: -2px;
+}
+
+.evalCheckbox input:checked + .checkmark {
+	background-color:  #b4b4f7;
+	border: #b4b4f7 ;
+}
+/* View checkbox looks normal but not clickable */
+#viewMode .evalCheckbox {
+	pointer-events: none;
+  }
+  #viewMode .evalCheckbox input {
+	cursor: default;
+  }
+
+
+
+
+
+/*ALL Position Card */
+#allPositionsDialog .head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-left: 17px;
+	margin-bottom: 17px;
+  }
+  
+  #allPositionsDialog .head h3 {
+	margin: 0;
+  }
+  
+  #allPositionsDialog .head .closeBtn {
+	background: none;
+	border: none;
+	cursor: pointer;
+  }
+  
+  #allPositionsDialog .head .closeBtn i {
+	color: #6c6af1;
+	font-size: 24px;
+  }
+  
+  /* 2️⃣ كل صف موظف: الصورة على اليسار، والمعلومات في المنتصف */
+  #allPositionsDialog .positions-list li {
+	display: flex;
+	align-items: center;
+	padding: 10px 16px;
+	transition: background 0.2s;
+	border-radius: 13px;
+  }
+  
+  /* عند الهوفر */
+  #allPositionsDialog .positions-list li:hover {
+	background: rgba(180, 180, 247, 0.4);
+  }
+
+
+  
+  /* إزالة المسافة بعد آخر عنصر */
+  .positions-list li:last-child {
+	margin-bottom: 0;
+  }
+  
+  /* صورة البروفايل */
+  .position-avatar {
+	width: 65px;
+	height: 65px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-right: 12px;
+  }
+  
+  /* محتوى النصوص بجانب الصورة */
+  
+  .position-info {
+	flex: 1;
+	text-align: center;
+  }
+  /* الترتيب (1st, 2nd, ...) كبير وباللون البنفسجي */
+  .position-rank {
+	
+	font-size: 25px;
+	font-weight: 600;
+	color: #6c6af1;
+	line-height: 1;
+  }
+  
+  /* الاسم بخط أصغر */
+  .position-name {
+	display: block;
+	font-size: 18px;
+	color: #444;
+	margin-top: 2px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+/* button */
+
+
+
+.action-buttons {
+	display: flex;
+	flex-wrap: wrap; 
+	margin-top: 20px;
+	padding: 10px;
+}
+
+.col{
+	flex-direction: column;
+	
+}
+.col > button{
+
+	margin: 5px 0px;
+}
+
+#applyChanges{
+	flex: 1 1 10%;
+	padding: 10px;
+	background-color: #6F6FF5;
+	font-family: var(--poppins);
+	font-size: medium;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	margin-right: 5px;
+}
+#cancelChanges{
+	flex: 1 1 10%;
+	padding: 10px;
+	border:solid 3px #6F6FF5;
+	font-family: var(--poppins);
+	font-size: medium;
+	color: #6F6FF5;
+	border-radius: 5px;
+	margin-right: 5px;
+}
+
+
+
+
+
+  .action-btn {
+    flex: 1;
+    padding: 10px;
+    font-family: var(--poppins);
+    font-size: medium;
+    border-radius: 5px;
+    margin: 0 5px;
+  }
+  .action-btn.filled {
+    background-color: #6F6FF5;
+    color: white;
+    border: none;
+  }
+  .action-btn.outlined {
+    border: solid 3px #6F6FF5;
+    color: #6F6FF5;
+    background-color: white;
+  }
+
+
+  .headerDialog {
+    position: relative;
+    padding: 12px 40px; /* مساحة للأيقونة */
+    text-align: center; /* توسيط العنوان */
+  }
+
+  .headerDialog .backBtn {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+
+
+
+
+
+
+
+
+  .upload-btn {
+	display: inline-block;
+	padding: 10px 20px;
+	border: 1.5px solid #6F6FF5;
+	color: #6F6FF5;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: 500;
+	margin: 20px 0;
+  }
+  
+  .upload-btn:hover {
+	background-color: #6F6FF5;
+	color: white;
+  }
+
+  /* ===== file-preview styles ===== */
+.file-preview-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin: 12px 0;
+	max-height: 150px;
+	overflow-y: auto;
+  }
+  
+  .file-preview {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 70px;
+	font-size: 10px;
+	text-align: center;
+  }
+  
+  .file-preview img {
+	width: 50px;
+	height: 50px;
+	object-fit: cover;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-bottom: 4px;
+  }
+  
+  /* Attach button active state */
+  #attachTaskFile-btn.active {
+	background-color: #6F6FF5;
+	color: white;
+	cursor: pointer;
+	font-family: var(--poppins);
+
+  }
+  
+  #attachTaskFile-btn {
+	width: 100%;
+	padding: 12px;
+	border-radius: 8px;
+	border: none;
+	background-color: #d3cdcd;
+	color: #222;
+	font-weight: bold;
+	cursor: not-allowed;
+	font-family: var(--poppins);
+
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* Canvas الكونفيتي */
+ #confettiCanvas {
+	position: fixed; top:0; left:0;
+	width:100%; height:100%;
+	pointer-events:none; z-index: 1000000000;
+  }
+  /* كارد الاحتفال */
+  #celebrationCard {
+	position: fixed;
+	top:50%; left:50%;
+	background: #fff;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+	color: #222;
+	padding: 20px 30px;
+	border-radius: 12px;
+	box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+	text-align: center;
+	z-index:1000;
+	animation: cardShow 0.8s ease-out forwards;
+	pointer-events:none; z-index: 1000000001;;
+
+  }
+  #celebrationCard .avatar {
+	width:80px; height:80px;
+	border-radius:50%;
+	object-fit:cover;
+	margin-bottom:10px;
+	box-shadow: 0 0 15px rgba(106, 104, 223, 0.701);
+	border:4px solid #7f7df3;
+  }
+  #celebrationCard h2 {
+	position: relative;
+	margin: 0 0 8px;
+	font-size:1.3rem;
+  }
+  #celebrationCard h2 span{
+	color: #6c6af1;
+  }
+  #celebrationCard .name {
+	font-size:1.2rem; font-weight:600;
+	margin-bottom:6px;
+  }
+  #celebrationCard .points {
+	color: #6c6af1;
+	font-size:1rem;
+  }
+
+  @keyframes cardShow {
+	0%   { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+	100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  }
+  
+  /* Keyframes للاختفاء بعد التأخير (pop-out) */
+  @keyframes cardHide {
+	0%   { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+	100% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+  }
+  
+  /* تطبيق الأنيميشن على الكارد */
+  #celebrationCard {
+	/* باقي التنسيق عندك */
+	animation:
+	  cardShow  0.5s ease-out forwards,
+	  cardHide  0.5s ease-in forwards 5s;
+	/* 
+	  - cardShow يستمر 0.6s عند الظهور
+	  - cardHide يبدأ بعد 10s (delay) ويستمر 0.6s
+	*/
+  }	
+  
+  
+  /* شريط العد التنازلي */
+  .progress-bar {
+	position: fixed;
+	top: calc(50% + 140px);
+	left: 50%;
+	transform: translateX(-50%);
+	width: 200px; height: 6px;
+	background: rgba(180, 180, 247, 0.4);
+	border-radius: 3px;
+	overflow: hidden;
+	z-index:1000;
+  }
+  .progress-bar::after {
+	content: '';
+	display: block;
+	height: 100%;
+	width: 100%;
+	background: #6F6FF5;
+	animation: shrink 5s linear forwards;
+  }
+  @keyframes shrink {
+	to { width: 0; }
+  }
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+
+
+	.chartsBx {
+		grid-template-columns: 1fr;
+		height: auto;
+	}
+}
+
+
+
+
+
+
+@media screen and (max-width: 576px) {
+	#content nav form .form-input input {
+		display: none;
+	}
+
+	#content nav form .form-input button {
+		width: auto;
+		height: auto;
+		background: transparent;
+		border-radius: none;
+		color: var(--dark);
+	}
+
+	#content nav form.show .form-input input {
+		display: block;
+		width: 100%;
+	}
+
+	#content nav form.show .form-input button {
+		width: 36px;
+		height: 100%;
+		border-radius: 0 36px 36px 0;
+		color: var(--light);
+		background: var(--red);
+	}
+
+	#content nav form.show~.notification,
+	#content nav form.show~.profile {
+		display: none;
+	}
+
+	#content main .box-info {
+		grid-template-columns: 1fr;
+	}
+
+	#content main .table-data .head {
+		min-width: 420px;
+	}
+
+	#content main .table-data .order table {
+		min-width: 240px;
+	}
+
+	#content main .chartsBx .container .todo-list {
+		min-width: 240px;
+	}
+
+	
+}

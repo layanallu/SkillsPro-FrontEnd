@@ -1,0 +1,371 @@
+.input-box {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    background: #fff;
+    margin: 0 auto;
+    border-radius: 8px;
+
+
+}
+
+.input-box i,
+.input-box .button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.input-box i {
+    left: 20px;
+    font-size: 30px;
+    color: #707070;
+}
+
+.input-box input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    padding: 0 155px 0 65px;
+    background-color: transparent;
+}
+
+.input-box .button {
+    right: 4px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 6px;
+    background-color: #6c6af1d6;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.input-box .button:active {
+    transform: translateY(-50%) scale(0.98);
+}
+
+/* Responsive */
+@media screen and (max-width: 500px) {
+    .input-box {
+        height: 40px;
+        margin: 0 8px;
+    }
+
+    .input-box i {
+        left: 12px;
+        font-size: 25px;
+    }
+
+    .input-box input {
+        padding: 0 112px 0 50px;
+    }
+
+    .input-box .button {
+        right: 2px;
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+
+}
+
+.search-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.sort-icon {
+    border: none;
+    padding: 10px 12px;
+    cursor: pointer;
+    font-size: 25px;
+
+}
+
+
+
+
+
+
+
+
+
+/* ===== Container الأساسي للصفحة ===== */
+.dashboard .user-section {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+/* ===== العناوين ===== */
+.dashboard .user-section .header {
+    display: grid;
+    grid-template-columns: 1.2fr 1.2fr 1.2fr 0.8fr 0.8fr 0.8fr 1fr;
+    font-weight: bold;
+    padding: 10px 20px;
+    color: #222;
+    place-items: center;
+    text-align: center;
+}
+
+.dashboard .user-section .header p {
+    margin: 0;
+}
+
+/* ===== عناصر كل صف ===== */
+
+
+.dashboard .user-section .list li {
+    display: grid;
+    grid-template-columns: 1.2fr 1.2fr 1.2fr 0.8fr 0.8fr 0.8fr 1fr;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: var(--grey);
+    margin: 10px 0;
+    place-items: center;
+    text-align: center;
+}
+
+.dashboard   {
+   
+  padding-bottom: 45px; 
+
+}
+
+
+.req-status {
+    font-size: 15px;
+}
+
+
+
+/* ===== معلومات المهمة (الايقونة + النص) ===== */
+.dashboard .user-section .req-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; /* ← يخليهم بنفس المستوى عاموديًا */
+    text-align: left; /* ← يتأكد النص نفسه مو في المنتصف */
+    gap: 10px;
+}
+.dashboard .user-section .list li > .req-info {
+    justify-self: start; /* ← يضبط محاذاة العنصر نفسه لليسار داخل الـ grid */
+  }
+.dashboard .user-section .textGroup p {
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    max-width: 170px;
+    /* أو حسب حجم العمود عندك */
+}
+
+.Worked-with {
+    display: flex;
+    justify-content: center;
+    /* يخلي الصور في النص */
+    align-items: center;
+    height: 40px;
+    position: relative;
+}
+.Worked-with img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    background-color: #d6d6ff;
+    font-size: 14px;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+
+  
+.add-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    padding: 15px 24px;
+    
+    width: calc(100% - 280px); /* نفس عرض #content لما السايدبار مفتوح */
+    margin-left: 280px;
+    z-index: 999;
+    box-sizing: border-box;
+    
+  }
+  
+  /* إذا السايدبار مقفل */
+  #sidebar.hide ~ #content .add-wrapper {
+    width: calc(100% - 60px);
+    margin-left: 60px;
+  }
+  
+  .add-button {
+    width: 100%;
+    
+    padding: 15px 0;
+    font-size: 18px;
+    background-color: #6c6af1;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+     box-shadow: 0 4px 8px rgba(108, 106, 241, 0.2); 
+  }
+  
+  
+  .add-button:hover {
+    background-color: #5856e0;
+  transform: translateY(-2px);
+  transition: all 0.2s ease-in-out;
+
+  }
+  .add-button::before {
+    content: "+";
+    transition: opacity 0.2s ease;
+  }
+  
+  .add-button:hover::before {
+    content: "New Request";
+    font-family: 'poppins';
+  }
+  
+  
+ 
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+.stats-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    flex: 1;
+    min-width: 180px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+
+.stat-card h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #6c6af1;
+}
+
+.stat-card p {
+    font-size: 17px;
+    color: #333;
+}
+
+
+.stat-card span {
+    font-size: 22px; 
+    font-weight: bold;
+    color:#6F6FF5;
+}
+.stat-card span.pending {
+    color: #414040;
+}
+
+
+  
+  
+  
+  @media screen and (max-width: 768px) {
+    .add-wrapper {
+      width: calc(100% - 60px - 40px); /* حسب عرض السايدبار في الجوال */
+    }
+  }
+
+
+
+.list li.accepted {
+    background: #dafddd !important;
+    ;
+}
+
+li.accepted i {
+    color: #4caf50 !important;
+    ;
+
+}
+
+.list li.rejected {
+    background-color: #fbb7ce !important;
+    ;
+}
+
+li.rejected i {
+    color: #f877a3 !important;
+    ;
+
+}
+
+.dashboard .user-section .req-info i {
+    font-size: 23px;
+   
+}
+
+@media screen and (max-width: 768px) {
+    .dashboard .user-section .header {
+        display: none;
+        /* نخفي العناوين */
+    }
+
+
+    .dashboard .user-section .list li {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        gap: 10px;
+        border-radius: 12px;
+    }
+
+ 
+
+    .req-title {
+        font-size: 18px;
+        font-weight: 700;
+        margin: 0;
+    }
+
+   
+
+
+
+
+}

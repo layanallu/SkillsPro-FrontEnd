@@ -1,0 +1,433 @@
+.input-box {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    background: #fff;
+    margin: 0 auto;
+    border-radius: 8px;
+
+
+}
+
+.input-box i,
+.input-box .button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.input-box i {
+    left: 20px;
+    font-size: 30px;
+    color: #707070;
+}
+
+.input-box input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    padding: 0 155px 0 65px;
+    background-color: transparent;
+}
+
+.input-box .button {
+    right: 4px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 6px;
+    background-color: #6c6af1d6;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.input-box .button:active {
+    transform: translateY(-50%) scale(0.98);
+}
+
+/* Responsive */
+@media screen and (max-width: 500px) {
+    .input-box {
+        height: 40px;
+        margin: 0 8px;
+    }
+
+    .input-box i {
+        left: 12px;
+        font-size: 25px;
+    }
+
+    .input-box input {
+        padding: 0 112px 0 50px;
+    }
+
+    .input-box .button {
+        right: 2px;
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+
+}
+
+.search-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.sort-icon {
+    border: none;
+    padding: 10px 12px;
+    cursor: pointer;
+    font-size: 25px;
+
+}
+
+
+
+
+
+/* ===== Container الأساسي للصفحة ===== */
+.dashboard .user-section {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+/* ===== العناوين ===== */
+.dashboard .user-section .header {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 2fr 1fr;
+    font-weight: bold;
+    padding: 10px 20px;
+    color: #222;
+    place-items: center;
+    text-align: center;
+}
+
+.dashboard .user-section .header p {
+    margin: 0;
+}
+
+/* ===== عناصر كل صف ===== */
+
+
+.dashboard .user-section .list li {
+    display: grid;
+    grid-template-columns: 2fr  1.5fr 2fr 1fr;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: var(--grey);
+    margin: 10px 0;
+    place-items: center;
+    text-align: center;
+}
+.dashboard .user-section .list li:hover {
+   background-color:  rgba(180, 180, 247, 0.4);
+   cursor: pointer;
+}
+.dashboard .user-section .list li.excellent:hover {
+   
+    cursor:auto;
+ }
+
+.task-status {
+    font-size: 15px;
+}
+
+
+
+/* ===== معلومات المهمة (الايقونة + النص) ===== */
+.dashboard .user-section .task-info {
+    display: flex;
+    align-items: center;
+    place-items: center;
+    text-align: center;
+    gap: 10px;
+}
+.dashboard .user-section .list li > .task-info {
+    justify-self: start; /* ← يضبط محاذاة العنصر نفسه لليسار داخل الـ grid */
+  }
+
+.dashboard .user-section .task-info i {
+    font-size: 20px;
+    color: #6c6af1;
+}
+
+
+.dashboard .user-section .textGroup p {
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    max-width: 170px;
+    /* أو حسب حجم العمود عندك */
+}
+
+/* ===== الصور المشاركة ===== */
+.dashboard .user-section .Worked-with {
+    display: flex;
+    justify-content: center;
+    /* يخلي الصور في النص */
+    align-items: center;
+    height: 40px;
+    position: relative;
+
+
+}
+
+.dashboard .user-section .Worked-with img,
+.Worked-with .extra-count {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    background-color: #d6d6ff;
+    font-size: 14px;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+
+
+}
+
+.Worked-with .extra-count {
+    background-color:rgba(180,180,247,0.63);
+    z-index: 9;
+    /* فوق الكل */
+}
+
+
+/* ===== نقاط المهمة ===== */
+
+.dashboard .user-section .rightGroup .point {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0;
+}
+
+.dashboard .user-section .rightGroup .info {
+    font-size: 13px;
+    color: gray;
+    margin: 0;
+}
+
+.list li.excellent {
+    background: #fff9bb !important;
+    
+}
+
+li.excellent i {
+    color: #fee267 !important;
+    
+
+}
+
+.list li.completed {
+    background: #dafddd !important;
+    
+}
+
+li.completed i {
+    color: #4caf50 !important;
+    
+
+}
+
+.list li.late {
+    background-color: #fbb7ce !important;
+    
+}
+
+li.late i {
+    color: #f877a3 !important;
+    
+
+}
+
+
+
+
+
+
+
+/* تنسيق قروب الشهر */
+.month-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #888;
+    padding-left: 12px;
+    border-left: 3px solid #6c6af1;
+    margin: 20px 0 5px;
+    line-height: 1.4;
+}
+
+
+
+
+
+
+
+
+
+.stats-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    flex: 1;
+    min-width: 180px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #6c6af1;
+}
+
+.stat-card p {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+
+/* ===== التصميم في الشاشات الصغيرة ===== */
+@media screen and (max-width: 768px) {
+    .dashboard .user-section .header {
+        display: none;
+        /* نخفي العناوين */
+    }
+
+
+    .dashboard .user-section .list li {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        gap: 10px;
+        border-radius: 12px;
+    }
+
+    .task-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .task-title {
+        font-size: 18px;
+        font-weight: 700;
+        margin: 0;
+    }
+
+    .worked-with {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* PDF Page */
+.embedded-file {
+    width: 100%;
+    height: 400px; /* تقدر تتحكم بالطول هنا */
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    
+  }
+
+  .add-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    padding: 15px 24px;
+    
+    width: calc(100% - 280px); /* نفس عرض #content لما السايدبار مفتوح */
+    margin-left: 280px;
+    z-index: 999;
+    box-sizing: border-box;
+    
+  }
+  
+  /* إذا السايدبار مقفل */
+  #sidebar.hide ~ #content .add-wrapper {
+    width: calc(100% - 60px);
+    margin-left: 60px;
+  }
+  
+  .add-button {
+    width: 100%;
+    
+    padding: 15px 0;
+    font-size: 18px;
+    background-color:  #6c6af1;
+   
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+     box-shadow: 0 4px 8px rgba(108, 106, 241, 0.2); 
+  }
+  
+  
+  .add-button:hover {
+    background-color: rgb(84, 82, 208);
+  transform: translateY(-2px);
+  transition: all 0.2s ease-in-out;
+  
+  }
+  .add-button::before {
+    content: "+";
+    transition: opacity 0.2s ease;
+  }
+  
+  .add-button:hover::before {
+    content: "Add to Excellent Work Libary";
+    font-family: 'poppins';
+  }
+    

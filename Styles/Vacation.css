@@ -1,0 +1,800 @@
+/* Vacation PAGE SPECIFIC STYLES */
+/* ---------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-rounded/css/uicons-solid-rounded.css');
+
+body {
+  font-family: 'Poppins', sans-serif;
+ 
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* Container holding form & stats side-by-side */
+.leaves-container {
+  width: 95%;             /* خليه ياخذ 95% من العرض العام */
+  max-width: 1200px;      /* خليه أعرض */
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  flex: 2;
+  min-width: 350px; /* إذا صغرت الشاشة */
+
+
+}
+.leave-form {
+  width: 100%;        /* ياخذ كل مساحة الكونتينر */
+  max-width: 100%;    /* يشيل الحد الأعلى لو كان موجود */
+  margin: 0 auto;
+}
+
+
+.leave-form .form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.leave-form .form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.date-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.date-group .date-field {
+  flex: 0 0 48%; /* خلي كل حقل ياخذ 48% من عرض الفورم */
+}
+
+
+.date-field input {
+  width: 100%;
+}
+
+
+.input-wrapper {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px 12px 12px 40px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper input {
+  border: none;
+  width: 100%;
+  outline: none;
+  font-size: 15px;
+  background: transparent;
+}
+
+.input-wrapper .calendar-icon {
+  position: absolute;
+  left: 12px;
+  font-size: 18px;
+  color: #6c6af1;
+}
+
+.full-width {
+  width: 100%;
+}
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+.form-group {
+  margin-bottom: 24px; /* كانت 20، زدناها شوي */
+}
+
+
+
+
+
+
+
+
+/* Shared input and select styles */
+.select-with-icon,
+.input-with-icon {
+  display: flex;
+  align-items: center;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+.select-with-icon i,
+.input-with-icon i {
+  margin-right: 8px;
+  color: #6F6FF5;
+  font-size: 20px;
+}
+.select-with-icon select,
+.input-with-icon input {
+  border: none;
+  background: transparent;
+  flex: 1;
+  font-size: 14px;
+  outline: none;
+  color: #333;
+}
+.basic-select {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #333;
+  appearance: auto;
+}
+.input-with-icon.readonly input {
+  color: #888;
+  cursor: not-allowed;
+}
+
+
+/* Replacement selector */
+.replacement-select {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.replacement-select img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #6F6FF5;
+}
+.replacement-select .circle-btn {
+  width: 36px;
+  height: 36px;
+  font-size: 20px;
+  border-radius: 50%;
+  background-color: #6F6FF5;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+
+/* File upload box */
+.input-with-icon.file-upload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #f5f5f5;
+  border: 2px dashed #6F6FF5;
+  border-radius: 10px;
+  padding: 12px;
+  height: 100%;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+.input-with-icon.file-upload:hover {
+  background-color: #f0f0ff;
+}
+.input-with-icon.file-upload i {
+  font-size: 22px;
+  color: #6F6FF5;
+}
+.input-with-icon.file-upload span {
+  font-size: 15px;
+  font-weight: 500;
+  color: #6F6FF5;
+}
+
+/* Submit button */
+.submit-btn {
+  background: #6F6FF5;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  flex: 1;
+  transition: background 0.3s ease;
+}
+.submit-btn:hover {
+  background-color: #5a5adb;
+}
+.submit-btn.outlined {
+  background: transparent;
+  color: #6F6FF5;
+  border: 2px solid #6F6FF5;
+}
+.submit-btn.outlined:hover {
+  background-color: #6F6FF5;
+  color: white;
+}
+
+/* Leave stats boxes */
+.leave-stats {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+.leave-stats .box {
+  flex: 1;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  text-align: center;
+}
+.leave-stats .box h2 {
+  font-size: 18px;
+  color: #6F6FF5;
+  margin-bottom: 10px;
+}
+.leave-stats .highlight {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Calendar dialog */
+dialog#calendarDialog {
+  border: none;
+  padding: 0;
+  background: transparent;
+  position: absolute;
+  z-index: 999;
+}
+dialog#calendarDialog::backdrop {
+  background: rgba(0, 0, 0, 0.2);
+}
+.calendar {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  width: 320px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+.calendar .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.calendar .header #month-year {
+  font-weight: bold;
+  font-size: 18px;
+}
+.calendar .btn {
+  cursor: pointer;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 6px;
+}
+.calendar .btn:hover {
+  background: #f0f0f0;
+}
+.calendar .weekdays,
+.calendar .days {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.calendar .weekdays div,
+.calendar .days div {
+  width: 14.28%;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 13px;
+}
+.calendar .days div {
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+.calendar .days div:hover {
+  background-color: #e0e0ff;
+}
+.calendar .days .today {
+  background-color: #6F6FF5;
+  color: white;
+}
+.calendar .days .fade {
+  color: #aaa;
+}
+
+.calendar .days .disabled {
+  color: #ccc;
+  pointer-events: none;
+}
+
+/* ==== Select Replacement Dialog ==== */
+#empDialog {
+  width: 400px;
+  max-height: 80vh;
+  padding: 0;
+  border: none;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+  position: fixed;
+  inset: 0;                   /* يغطي الشاشة كاملة */
+  margin: auto;               /* يوسّط المودال */
+  overflow: auto;
+  font-family: 'Poppins', sans-serif;
+  z-index: 1000;
+}
+#empDialog::backdrop {
+  background: rgba(0,0,0,0.3);
+}
+#empDialog .modal-content {
+  padding: 20px;
+}
+#empDialog h2 {
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+#empDialog .emp-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#empDialog .emp-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#empDialog .emp-list li:hover {
+  background: #f0f0ff;
+}
+#empDialog .emp-list li.selected {
+  background: #6F6FF5;
+  color: white;
+}
+#empDialog .emp-list img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+#empDialog .actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+  width: 100%;
+}
+#empDialog .actions button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: inherit;
+}
+#empDialog .actions button:first-child {
+  background: #eee;
+  color: #333;
+}
+#empDialog .actions button:last-child {
+  background: #6F6FF5;
+  color: white;
+  transition: background 0.3s;
+}
+#empDialog .actions button:last-child:hover {
+  background: #5a5adb;
+}
+
+/*no repl*/
+/* Dialog: Confirm no replacement */
+#noReplacementDialog {
+  width: 400px;
+  padding: 0;
+  border: none;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  font-family: 'Poppins', sans-serif;
+  z-index: 1002;
+}
+
+#noReplacementDialog::backdrop {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+#noReplacementDialog .modal-content {
+  padding: 20px;
+  text-align: center;
+}
+
+#noReplacementDialog p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+#noReplacementDialog .actions {
+  display: flex;
+  justify-content: space-around;
+}
+
+#noReplacementDialog .actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#noReplacementDialog .actions button:first-child {
+  background: #eee;
+  color: #333;
+}
+
+#noReplacementDialog .actions button:last-child {
+  background: #6F6FF5;
+  color: white;
+}
+
+#noReplacementDialog .actions button:last-child:hover {
+  background: #5a5adb;
+}
+
+
+/* ==== Add Replacement Task Dialog ==== */
+/* #taskDialog {
+  width: 400px;
+  max-height: 80vh;
+  padding: 0;
+  border: none;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  overflow: auto;
+  font-family: 'Poppins', sans-serif;
+  z-index: 1001;
+}
+#taskDialog::backdrop {
+  background: rgba(0,0,0,0.3);
+}
+#taskDialog h2 {
+  margin: 20px 25px 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+#taskDialog form input,
+#taskDialog form textarea {
+  width: calc(100% - 32px);
+  margin: 10px 16px;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  font-family: inherit;
+  color: #333;
+}
+#taskDialog form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+#taskDialog .actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 10px 16px 20px;
+}
+#taskDialog .actions button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: inherit;
+}
+#taskDialog .actions button:first-child {
+  background: #eee;
+  color: #333;
+}
+#taskDialog .actions button:last-child {
+  background: #6F6FF5;
+  color: white;
+  transition: background 0.3s;
+}
+#taskDialog .actions button:last-child:hover {
+  background: #5a5adb;
+} */
+#empDialog .close-btn,
+#taskDialog .close-btn {
+  position: absolute;
+  top: 12px;      /* مسافة من الأعلى */
+  right: 16px;    /* صار على اليمين */
+  left: auto;     /* لازم نشيل تأثير الـleft القديم */
+  font-size: 20px;
+  color: #999;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+#empDialog .close-btn:hover,
+#taskDialog .close-btn:hover {
+  color: #333;
+}
+.invatedEmp {
+  display: flex;
+  align-items: center;
+}
+
+.invatedEmpImg {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 6px;
+}
+
+#replacementContainer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+
+/* ===== Replacement Tasks Cards ===== */
+.task-list {
+  list-style: none;
+  margin: 10px 0;
+  padding: 0;
+}
+
+.task-list li {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.task-list li:hover {
+  background-color: #f0f0ff;
+}
+
+/* نص الوصف تحت العنوان */
+.task-list li p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* أخيراً: أزل المسافة الزائدة بعد آخر عنصر */
+.task-list li:last-child {
+  margin-bottom: 0;
+}
+
+
+
+.task-list li.selected {
+  background-color: #6F6FF5;          /* بنفسجي غامق */
+  color: #fff;
+}
+
+.task-list li.selected p {
+  color: #f0f0ff;                     /* نص الوصف يصير فاتح */
+}
+
+.task-list li input[type="checkbox"] {
+  display: none;                      /* اخفي التشيك بوكس */
+}
+
+
+.continue-btn {
+  width: 100%;
+  background-color: #6F6FF5;      /* بنفسجي */
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.5;                   /* يظهر باهت وهو معطّل */
+  transition: background 0.3s ease, opacity 0.3s ease;
+}
+
+.continue-btn:enabled {
+  opacity: 1;
+                       /* يظهر كاملاً وهو مفعّل */
+}
+
+.continue-btn:hover:enabled {
+  background-color: #5A5AD8;      /* غمق شوية عند المرور */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.input-with-icon.calendar {
+  display: flex;
+  align-items: center;
+  height: 45px; /* زي الـ Duration بالضبط */
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 0 12px;
+  width: 100%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.input-with-icon.calendar i {
+  color: #6F6FF5;
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+.input-with-icon.calendar button.calendar-btn {
+  all: unset;
+  flex: 1;
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-left: 4px;
+}
+
+
+
+
+
+
+
+
+
+
+/* Vacation Balance Card */
+.leave-balance-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 20px 25px;
+  max-width: 250px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  font-family: 'Poppins', sans-serif;
+  
+  flex: 1; /* ياخذ 1/3 من المساحة */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 250px;
+}
+
+.leave-balance-card .balance-section {
+  margin-bottom: 30px;
+}
+
+.leave-balance-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.leave-balance-card p {
+  font-size: 14px;
+  margin: 6px 0;
+  color: #444;
+}
+
+.leave-balance-card .highlight {
+  color: #6F6FF5;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 5px;
+}
+.content-wrapper {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.content-wrapper > .leave-form {
+  flex: 2;
+  min-width: 350px;
+}
+
+.content-wrapper > .leave-balance-card {
+  flex: 1;
+  min-width: 250px;
+}
+.balance-cards.vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* يضيف المسافة بين الكروت */
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 900px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  .leaves-container {
+    width: 100%;
+  }
+
+  .balance-cards.vertical {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .balance-cards.vertical .leave-balance-card {
+    flex: 1 1 200px; /* كرت يكبر ويصغر حسب الحاجة */
+    min-width: 200px; /* أقل عرض 200 */
+    max-width: none; /* لا تحدد له حد أقصى */
+  }
+}

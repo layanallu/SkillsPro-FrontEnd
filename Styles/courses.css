@@ -1,0 +1,401 @@
+/* ---------------------------------------------- */
+/* COURSES PAGE SPECIFIC STYLES */
+/* ---------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-rounded/css/uicons-solid-rounded.css');
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.search-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f5f5f5;
+  padding: 10px 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  flex-grow: 1;
+}
+
+.search-bar i {
+  font-size: 20px;
+  color: #6F6FF5;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 10px;
+  font-size: 15px;
+  background: transparent;
+  color: #333;
+}
+
+.custom-dropdown {
+  position: relative;
+}
+
+#filterBtn {
+  background: #6F6FF5;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  list-style: none;
+  padding: 0;
+  margin-top: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: none;
+  z-index: 100;
+  min-width: 100%;
+}
+
+.dropdown-options li {
+  padding: 10px 16px;
+  cursor: pointer;
+  color: #333;
+  font-size: 14px;
+}
+
+.dropdown-options li:hover {
+  background: #f0f0f0;
+}
+
+
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 10px 0;
+  justify-content: center;
+}
+
+
+.course-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease;
+  min-height: 130px;
+  max-width: 100%;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+}
+
+.course-card img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.course-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.course-info h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.course-info p {
+  font-size: 13px;
+  color: #555;
+  margin: 3px 0;
+}
+
+.edit-btn,
+.delete-btn {
+  background: #6F6FF5;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: background 0.3s ease;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+  background: #5a5adb;
+}
+
+
+@media (max-width: 768px) {
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search-filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-bar,
+  .filter-bar {
+    width: 100%;
+  }
+}
+
+
+
+
+.points-adjust {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.points-adjust button {
+  background-color: transparent;
+  border: 1.5px solid #6F6FF5;
+  color: #6F6FF5;
+  font-size: 16px;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.points-adjust button:hover {
+  background-color: #6F6FF5;
+  color: white;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.actions button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.actions button:first-child {
+  background: #f0f0f0;
+}
+
+.actions button:last-child {
+  background: #6F6FF5;
+  color: white;
+}
+.add-course-btn {
+  background-color: #6F6FF5;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-course-btn:hover {
+  background-color: #5a5adb;
+}
+.manual-modal-content {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.manual-modal-content h2 {
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #222;
+}
+
+.custom-form input,
+.custom-form select {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f7f8f8;
+  font-size: 15px;
+  color: #333;
+}
+
+.custom-form select {
+  appearance: none;
+}
+
+.custom-select select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #333;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 8L0 0h12L6 8z' fill='%236F6FF5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+}
+
+
+
+/* ========== MODAL CONTENT ========== */
+.modal-content {
+  padding: 25px;
+  position: relative;
+  background: #fff;
+}
+
+.modal-content h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.modal-content input,
+.modal-content select {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.mod/* ========== ACTION BUTTONS ========== */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.modal-actions button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+}
+
+.modal-actions button:first-child {
+  background-color: #eee;
+  color: #333;
+}
+
+.modal-actions button:last-child,
+.submit-btn {
+  background-color: #6F6FF5;
+  color: white;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.modal-actions button:last-child:hover,
+.submit-btn:hover {
+  background-color: #5a5adb;
+}
+
+.close-btn {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  font-size: 22px;
+  color: #999;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+/* Responsive Modal */
+@media (max-width: 500px) {
+  dialog.modal {
+    width: 90%;
+    padding: 0;
+  }
+
+  .modal-content {
+    padding: 20px;
+  }
+
+  .modal-content h2 {
+    font-size: 18px;
+  }
+}
+/*لتلوين لو كانت النقاط خطأ*/
+.points-input.error-input {
+  border: 2px solid #f14983;
+  background-color: #fbb7ce33;
+}

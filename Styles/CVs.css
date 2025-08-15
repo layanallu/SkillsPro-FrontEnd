@@ -1,0 +1,438 @@
+/* ——— Uploader Component ——— */
+
+.uploader {
+  width: 100%;             /* ياخذ 95% من العرض الكلي */    
+  padding: 40px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.uploader-header {
+  text-align: center;
+  padding: 16px 0;
+  background-color: #6c6af1;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.uploader-header h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.uploader-header label {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.uploader-header input {
+  margin-right: 8px;
+}
+
+.uploader-instructions {
+  padding: 16px 24px;
+  color: #333;
+}
+
+.uploader-dropzone {
+  flex: 1;
+  margin: 0 24px;
+  padding: 20px;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  text-align: center;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.uploader-dropzone.dragover {
+  border-color: #6c6af1;
+  background: rgba(108,106,241,0.1);
+}
+
+.uploader-dropzone i {
+  font-size: 4.5rem;
+  color: #6c6af1;
+}
+
+.uploader-dropzone p {
+  margin: 12px 0 20px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.btn-select {
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.btn-select:active {
+  transform: translateY(-1px);
+}
+
+/* ——— STEP X: Job Description ——— */
+.uploader-jobdesc {
+  margin: 16px 32px;
+}
+
+.uploader-jobdesc label {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+.uploader-jobdesc small {
+  font-weight: normal;
+  color: #999;
+  font-size: 0.8rem;
+}
+
+.uploader-jobdesc textarea {
+  width: 100%;
+  padding: 10px 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.uploader-jobdesc textarea:focus {
+  border-color: #6c6af1;
+  box-shadow: inset 0 2px 8px rgba(108,106,241,0.2);
+  outline: none;
+}
+
+
+.file-list {
+  list-style: none;
+  margin: 16px 24px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.file-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #333;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 50%;
+}
+
+.progress-bar {
+  flex: 1;
+  background: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar .bar {
+  width: 0;
+  height: 8px;
+  background: #6c6af1;
+  transition: width 0.3s ease;
+}
+
+.percent {
+  min-width: 32px;
+  text-align: right;
+  font-size: 0.7rem;
+  color: #333;
+}
+
+
+.uploader-actions {
+  
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    width: 100%;
+    padding: 0 24px; /* بديل آمن للـ margin */
+    box-sizing: border-box;
+  
+}
+
+.btn-cancel,
+.btn-upload {
+  flex: 1 1 43%;
+  padding: 12px 20px;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.btn-cancel {
+  background: #eee;
+  color: #333;
+}
+
+.btn-upload {
+  background: #6c6af1;
+  color: #fff;
+}
+
+/* شاشات صغيرة: نخليهم فوق بعض وياخذوا عرض كامل */
+@media (max-width: 600px) {
+  .btn-cancel,
+  .btn-upload {
+    flex: 1 1 100%;
+  }
+}
+
+.btn-upload:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+:root {
+  --primary: #6c63ff;
+  --bg-card: #fff;
+  --bg-page: #f4f5f7;
+  --text-main: #333;
+  --text-muted: #666;
+  --radius: 16px;
+  --shadow: rgba(0, 0, 0, 0.08);
+
+  /* sizing */
+  --card-gap: 1rem;
+  --card-min: 300px;
+  --diagram: 72px;
+  --font-title: 1.25rem;
+  --font-base: 1rem;
+}
+
+body {
+  font-family: 'Poppins', sans-serif !important;
+  color: var(--text-main);
+}
+
+.analysis-results {
+  display: flex;
+  flex-direction: column;  /* 🔁 أهم شيء: خلي الكروت عمودية */
+  gap: var(--card-gap);
+  justify-content: center;
+  align-items: flex-start;    /* ← top-align all cards */
+
+}
+
+.candidate-card {
+  width: 100%;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px var(--shadow);
+  transition: transform 0.2s;
+}
+.candidate-card:hover {
+  transform: translateY(-6px);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  padding: 1.25rem;
+  gap: 1rem;
+}
+
+/* —— Diagram —— */
+.score-circle {
+  width: var(--diagram);
+  height: var(--diagram);
+}
+.circular-chart { display: block; max-width: 100%; height: auto; }
+.circle-bg {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 3;
+}
+.circle {
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: 3;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: 18px 18px;
+}
+.percentage {
+  font-size: 0.7rem;
+  fill: var(--text-main);
+}
+
+/* —— Info & toggle —— */
+.candidate-info { flex: 1; }
+.candidate-name {
+  margin: 0;
+  font-size: var(--font-title);
+}
+.job-position {
+  margin: .25rem 0 0;
+  color: var(--text-muted);
+  font-size: var(--font-base);
+}
+
+.toggle-details {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: .75rem 1.25rem;
+  text-align: left;
+  font-size: var(--font-base);
+  color: var(--primary);
+  cursor: pointer;
+  border-top: 1px solid #eee;
+  text-decoration: underline dotted;
+}
+
+/* —— Details: dotted bullets —— */
+.card-details {
+  display: none;
+  padding: 0 1.25rem 1.25rem;
+}
+.card-details.open {
+  display: block;
+}
+.detail-section + .detail-section {
+  margin-top: 1rem;
+}
+.detail-section strong {
+  display: block;
+  margin-bottom: .5rem;
+}
+.detail-section ul {
+  margin: 0;
+  padding-left: 1.2em;
+  list-style: disc inside !important;    /* ← dotted bullets */ 
+  color: var(--text-muted);
+}
+.detail-section li {
+  margin-bottom: .4rem;
+}
+
+/* —— Responsive: single-column under 600px —— */
+@media (max-width: 600px) {
+  .candidate-card {
+    flex: 1 1 100%;
+  }
+}
+
+
+
+.uploader-disclaimer {
+  margin: .5rem 0 .5rem;
+  padding-left: 1rem;
+  list-style: disc inside;
+  font-size: .85rem;
+  color: var(--text-muted);
+}
+.uploader-disclaimer li {
+  justify-self: center;
+}
+.job-position:empty {
+  display: none;
+}
+.error-banner { 
+  width: 100%; background: #fee; border:1px solid #f99; padding:1em; border-radius:4px; color:#f877a3;; margin-bottom:1em; 
+}
+
+
+/* make it full width and center its contents */
+.loader-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* left-align loader elements */
+  background: #f9f9f9;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 100%;      /* full width of parent */
+  box-sizing: border-box;
+}
+
+/* pulsating circle */
+.loader-circle {
+  flex: 0 0 auto;
+  width: 3rem;      /* scales with root font-size */
+  height: 3rem;
+  background: #6b7280;
+  border-radius: 50%;
+  animation: pulse 1.5s ease-in-out infinite;
+  margin-right: 1rem;
+}
+
+/* container for the two bars */
+.loader-lines {
+  flex: 1;          /* fill remaining space */
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* pulsating bars */
+.loader-line {
+  height: 0.75rem;
+  background: #6b7280;
+  border-radius: 4px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* different relative widths */
+.loader-line--long {
+  width: 60%;       /* 60% of parent (.loader-lines) */
+}
+
+.loader-line--short {
+  width: 45%;       /* 45% of parent */
+}
+
+/* keyframes for the pulse effect */
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.5; transform: scale(0.95); }
+}
+
+/* ensure responsiveness on very small screens */
+@media (max-width: 400px) {
+  .loader-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .loader-circle {
+    margin: 0 0 1rem;
+  }
+  .loader-lines {
+    width: 80%;
+  }
+  .loader-line--long, .loader-line--short {
+    width: 100%;
+  }
+}
+.error-card { border: 1px solid  #fbb7ce; background: #fee; }
+.error-card .card-header { padding: 1rem; }
+.error-card .candidate-name { color: #f877a3; margin: 0; }
+.error-card .job-position { color: #f877a3; margin: 0.5rem 0 0; }

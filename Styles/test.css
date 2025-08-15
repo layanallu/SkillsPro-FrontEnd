@@ -1,0 +1,132 @@
+:root {
+    --primary: #6c63ff;
+    --bg-card: #fff;
+    --bg-page: #f4f5f7;
+    --text-main: #333;
+    --text-muted: #666;
+    --radius: 16px;
+    --shadow: rgba(0, 0, 0, 0.08);
+  
+    /* sizing */
+    --card-gap: 1rem;
+    --card-min: 300px;
+    --diagram: 72px;
+    --font-title: 1.25rem;
+    --font-base: 1rem;
+  }
+  
+  body {
+    background: var(--bg-page);
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-main);
+  }
+  
+  .analysis-results {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--card-gap);
+    justify-content: center;
+    align-items: flex-start;    /* ← top-align all cards */
+    max-width: 960px;
+    margin: 2rem auto;
+  }
+  
+  .candidate-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    box-shadow: 0 6px 20px var(--shadow);
+    flex: 1 1 calc(50% - var(--card-gap));
+    min-width: var(--card-min);
+    transition: transform 0.2s;
+  }
+  .candidate-card:hover {
+    transform: translateY(-6px);
+  }
+  
+  .card-header {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+  
+  /* —— Diagram —— */
+  .score-circle {
+    width: var(--diagram);
+    height: var(--diagram);
+  }
+  .circular-chart { display: block; max-width: 100%; height: auto; }
+  .circle-bg {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 3;
+  }
+  .circle {
+    fill: none;
+    stroke: var(--primary);
+    stroke-width: 3;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: 18px 18px;
+  }
+  .percentage {
+    font-size: 0.8rem;
+    fill: var(--text-main);
+  }
+  
+  /* —— Info & toggle —— */
+  .candidate-info { flex: 1; }
+  .candidate-name {
+    margin: 0;
+    font-size: var(--font-title);
+  }
+  .job-position {
+    margin: .25rem 0 0;
+    color: var(--text-muted);
+    font-size: var(--font-base);
+  }
+  
+  .toggle-details {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: .75rem 1.25rem;
+    text-align: left;
+    font-size: var(--font-base);
+    color: var(--primary);
+    cursor: pointer;
+    border-top: 1px solid #eee;
+    text-decoration: underline dotted;
+  }
+  
+  /* —— Details: dotted bullets —— */
+  .card-details {
+    display: none;
+    padding: 0 1.25rem 1.25rem;
+  }
+  .card-details.open {
+    display: block;
+  }
+  .detail-section + .detail-section {
+    margin-top: 1rem;
+  }
+  .detail-section strong {
+    display: block;
+    margin-bottom: .5rem;
+  }
+  .detail-section ul {
+    margin: 0;
+    padding-left: 1.2em;
+    list-style: disc inside !important;    /* ← dotted bullets */ 
+    color: var(--text-muted);
+  }
+  .detail-section li {
+    margin-bottom: .4rem;
+  }
+  
+  /* —— Responsive: single-column under 600px —— */
+  @media (max-width: 600px) {
+    .candidate-card {
+      flex: 1 1 100%;
+    }
+  }
